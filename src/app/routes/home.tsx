@@ -31,7 +31,7 @@ const HomeRoute = () => {
             <ReactLenis root>
                 <MarqueeComponent></MarqueeComponent>
                 <Header></Header>
-                <section className='h-svh bg-zinc-700 relative panel' style={{ 'zIndex': "-100" }}>
+                <section className='h-svh bg-emerald-950 relative panel' style={{ 'zIndex': "-100" }}>
                     <video
                         loop
                         preload="auto"
