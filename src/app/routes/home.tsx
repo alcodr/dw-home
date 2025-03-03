@@ -7,7 +7,7 @@ import { ReactLenis } from 'lenis/react'
 import homeVideo from '@/assets/home-vid.mp4'
 import Footer from '@/components/ui/footer/footer';
 import Header from '@/components/ui/header/header';
-
+import MarqueeComponent from "@/components/ui/marquee/Marquee";
 
 const HomeRoute = () => {
     gsap.registerPlugin(useGSAP);
@@ -29,6 +29,7 @@ const HomeRoute = () => {
     return (
         <>
             <ReactLenis root>
+                <MarqueeComponent></MarqueeComponent>
                 <Header></Header>
                 <section className='h-svh bg-zinc-700 relative panel' style={{ 'zIndex': "-100" }}>
                     <video
