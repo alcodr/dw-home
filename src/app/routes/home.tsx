@@ -5,9 +5,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ReactLenis } from 'lenis/react'
 
 import homeVideo from '@/assets/home-vid.mp4'
+import downloadApple from '@/assets/dl_apple.png'
+import downloadGoogle from '@/assets/dl_google.png'
+
 import Footer from '@/components/ui/footer/footer';
 import Header from '@/components/ui/header/header';
 import MarqueeComponent from "@/components/ui/marquee/Marquee";
+import { useEffect } from "react";
 
 const HomeRoute = () => {
     gsap.registerPlugin(useGSAP);
@@ -26,11 +30,18 @@ const HomeRoute = () => {
             });
         });
     })
+
+    const shadowStyle = {
+        'background': 'linear-gradient(180deg, rgba(227, 227, 227, 0) 0%, rgb(13, 13, 13) 100%)',
+    }
+
     return (
         <>
             <ReactLenis root>
                 <MarqueeComponent></MarqueeComponent>
                 <Header></Header>
+                <div className={`absolute top-0 bottom-0 left-0 right-0`} style={shadowStyle}>
+                </div>
                 <section className='h-svh bg-emerald-950 relative panel' style={{ 'zIndex': "-100" }}>
                     <video
                         loop
@@ -52,10 +63,10 @@ const HomeRoute = () => {
                         <source src={homeVideo} type="video/mp4" />
                     </video>
                 </section>
-                <div className='panel' style={{ backgroundColor: "#f5f5f5" }}>
-                    <section className='h-svh p-6 text-center'>
-                        WELCOME TO<br />
-                        DAILY WEEKLY COFFEE HOUSE
+                <div className='panel bg-[#f5f5f5] dark:bg-[#0d0d0d]'>
+                    <section className='h-svh px-6 pt-16 text-center'>
+                        <div className="text-xs">WELCOME TO</div>
+                        <div className="text-5xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
                     </section>
                     <section className='h-svh uppercase p-6 text-center'>
                         LOYALTY MEMBERSHIP PLATFORM <br />
@@ -64,6 +75,14 @@ const HomeRoute = () => {
                     <section className='h-svh uppercase p-6 text-center'>
                         our promo only membership <br />
                         Download our app and get benefits promo
+                    </section>
+                    <section className='uppercase p-6 text-center'>
+                        <div className="text-5xl font-extrabold">Download DW <br /> Coffee Apps</div>
+                        <div className="flex flex-col justify-center items-center gap-[20px] my-8">
+                            <img src={downloadApple} className="cursor-pointer" />
+                            <img src={downloadGoogle} className="cursor-pointer" />
+                        </div>
+                        <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and <br /> ultimate coffee convenience.</div>
                     </section>
                     <Footer></Footer>
                 </div>

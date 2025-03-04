@@ -1,5 +1,5 @@
 import dwLogo from '@/assets/dw-logo.png'
-import { footerNavigation, footerCopy, footerCopyright } from '@/const/homeConst';
+import { footerNavigation, footerCopy, footerCopyright } from '@/constants/homeConst';
 
 const Footer = () => {
     return <>

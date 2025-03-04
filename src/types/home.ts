@@ -3,3 +3,8 @@ export type footerNavigation = {
     company: String[],
     legal: String[]
 }
+
+export type darkState = {
+    dark: boolean,
+    toggleDark: (dark: boolean) => void
+}
