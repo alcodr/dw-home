@@ -37,7 +37,12 @@ const HomeRoute = () => {
 
     return (
         <>
-            <ReactLenis root>
+            <ReactLenis root options={
+                {
+                    wheelMultiplier: 0.5,
+                    touchMultiplier: 0.5
+                }
+            }>
                 <MarqueePromoLine></MarqueePromoLine>
                 <Header></Header>
                 <div className={`absolute top-0 bottom-0 left-0 right-0`} style={shadowStyle}>
