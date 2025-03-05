@@ -18,7 +18,7 @@ const Footer = () => {
                             <h6 className='font-semibold'>Page</h6>
                             {footerNavigation.page.map((page, i) => {
                                 return (
-                                    <div key={'footpage_' + i} className='cursor-pointer font-semibold text-slate-600'>{page}</div>
+                                    <div key={'footpage_' + i} className='cursor-pointer font-semibold text-zinc-500'>{page}</div>
                                 )
                             })}
                         </div>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <h6 className='font-semibold'>Company</h6>
                             {footerNavigation.company.map((company, i) => {
                                 return (
-                                    <div key={'footcomp_' + i} className='cursor-pointer font-semibold text-slate-600'>{company}</div>
+                                    <div key={'footcomp_' + i} className='cursor-pointer font-semibold text-zinc-500'>{company}</div>
                                 )
                             })}
                         </div>
@@ -34,7 +34,7 @@ const Footer = () => {
                             <h6 className='font-semibold'>Legal</h6>
                             {footerNavigation.legal.map((legal, i) => {
                                 return (
-                                    <div key={'footlegal_' + i} className='cursor-pointer font-semibold text-slate-600'>{legal}</div>
+                                    <div key={'footlegal_' + i} className='cursor-pointer font-semibold text-zinc-500'>{legal}</div>
                                 )
                             })}
                         </div>

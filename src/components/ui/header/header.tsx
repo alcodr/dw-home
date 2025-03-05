@@ -21,7 +21,6 @@ const Header = () => {
 
     useGSAP(() => {
         ScrollTrigger.create({
-            markers: true,
             trigger: '.container-content',
             start: "top",
             end: "bottom",
@@ -32,7 +31,6 @@ const Header = () => {
         })
 
         ScrollTrigger.create({
-            markers: true,
             trigger: '.container-content',
             start: "top",
             end: "bottom",
@@ -43,7 +41,6 @@ const Header = () => {
         })
 
         ScrollTrigger.create({
-            markers: true,
             trigger: '.container-content',
             start: "top",
             end: "bottom",
@@ -57,7 +54,7 @@ const Header = () => {
     })
 
     return (<>
-        <div className="header py-6 px-6 flex justify-between hover:bg-[#f5f5f5] dark:hover:bg-[#0d0d0d] text-white items-center fixed w-100 left-0 right-0 z-[200]" >
+        <div className="header py-6 px-6 flex justify-between lg:hover:bg-[#f5f5f5] lg:dark:hover:bg-[#0d0d0d] text-white items-center fixed w-100 left-0 right-0 z-[200]" >
             <div className="cursor-pointer">
                 <TextAlignLeftIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></TextAlignLeftIcon>
             </div>

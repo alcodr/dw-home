@@ -136,14 +136,19 @@ const HomeRoute = () => {
                                 {renderDrinks()}
                             </div>
                         </section>
-                        <section className='h-svh uppercase p-4 text-center'>
-                            <div className="py-16">
+                        <section className='p-4 text-center'>
+                            <div className="uppercase py-16">
                                 <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
                                 <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
                             </div>
+                            <div className="flex justify-center">
+                                <div className="text-center text-white flex items-center justify-center bg-neutral-900 w-1/2 h-80">
+                                    Carousel
+                                </div>
+                            </div>
                         </section>
-                        <section className='uppercase py-16'>
-                            <div className="p-6 mb-6 text-center">
+                        <section className='py-16'>
+                            <div className="uppercase p-6 mb-6 text-center">
                                 <div className="text-4xl font-bold mb-4">our promo only membership</div>
                                 <div>Download our app and get benefits promo</div>
                             </div>
@@ -151,7 +156,7 @@ const HomeRoute = () => {
                         </section>
                         <section className='uppercase py-16 text-center relative' style={beverageShadowStyle}>
                             <MarqueeBeverages></MarqueeBeverages>
-                            <div className="px-6">
+                            <div className="px-6 uppercase">
                                 <div className="text-4xl font-extrabold">Download DW <br /> Coffee Apps</div>
                                 <div className="flex flex-col justify-center items-center gap-[20px] my-8">
                                     <img src={downloadApple} className="cursor-pointer" />
