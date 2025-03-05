@@ -33,7 +33,7 @@ const MarqueePromoBanner = () => {
 
     return (
         <div>
-            <Marquee autoFill>
+            <Marquee autoFill speed={50}>
                 {promos.map((promo: any, i: number) => {
                     return (
                         <div key={'promo_' + i} className="mx-6 relative w-[500px] h-[500px] bg-slate-800 flex flex-col justify-end content-end inter">

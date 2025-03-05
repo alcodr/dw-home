@@ -20,16 +20,30 @@ const HomeRoute = () => {
 
     useGSAP(() => {
         let panels = gsap.utils.toArray(".panel");
-        console.log(panels)
-
         panels.forEach((panel: any) => {
             ScrollTrigger.create({
                 trigger: panel,
-                start: () => "top top", // if it's shorter than the viewport, we prefer to pin it at the top
+                start: () => "top top",
                 pin: true,
                 pinSpacing: false
             });
         });
+
+        let horizontalSections = gsap.utils.toArray(".drinks-container");
+        horizontalSections.forEach((container: any) => {
+            let sections = container.querySelectorAll(".drink");
+
+            gsap.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: container,
+                    pin: false,
+                    scrub: 1,
+                    end: "+=8000",
+                }
+            });
+        })
     })
 
     const shadowStyle = {
@@ -43,6 +57,18 @@ const HomeRoute = () => {
     const lenisOptions = {
         wheelMultiplier: 0.5,
         touchMultiplier: 0.5
+    }
+
+    const drinksNum: number = 8;
+    const renderDrinks = () => {
+        let content = []
+        for (let i = 0; i < drinksNum; i++) {
+            const el = <div key={`drink_${i}`} className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
+                <img src={`./src/assets/drinks/drink_${i + 1}.jpg`} className="rounded-md object-center object-cover h-full w-100" />
+            </div>
+            content.push(el)
+        }
+        return content;
     }
 
     return (
@@ -73,34 +99,43 @@ const HomeRoute = () => {
                         <source src={homeVideo} type="video/mp4" />
                     </video>
                 </section>
-                <div className='bg-[#f5f5f5] dark:bg-[#0d0d0d]'>
-                    <section className='h-svh px-6 pt-16 text-center'>
-                        <div className="text-xs mb-4">WELCOME TO</div>
-                        <div className="text-4xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
+                <div className='bg-[#f5f5f5] dark:bg-[#0d0d0d] overflow-hidden'>
+                    <section className='pt-16 text-center mb-8'>
+                        <div className="px-6 mb-[50px]">
+                            <div className="text-xs mb-4">WELCOME TO</div>
+                            <div className="text-4xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
+                        </div>
+                        <div className="drinks-container flex overflow-hidden w-[500%]">
+                            {renderDrinks()}
+                        </div>
                     </section>
                     <section className='h-svh uppercase p-6 text-center'>
-                        <div className="text-4xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
-                        <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
+                        <div className="py-16">
+                            <div className="text-4xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
+                            <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
+                        </div>
                     </section>
-                    <section className='uppercase p-6 py-16'>
+                    <section className='uppercase py-16'>
                         <div className="p-6 mb-6 text-center">
                             <div className="text-[40px] font-bold mb-4">our promo only membership</div>
                             <div>Download our app and get benefits promo</div>
                         </div>
                         <MarqueePromoBanner></MarqueePromoBanner>
                     </section>
-                    <section className='uppercase py-16 px-6 text-center relative' style={beverageShadowStyle}>
+                    <section className='uppercase py-16 text-center relative' style={beverageShadowStyle}>
                         <MarqueeBeverages></MarqueeBeverages>
-                        <div className="text-4xl font-extrabold">Download DW <br /> Coffee Apps</div>
-                        <div className="flex flex-col justify-center items-center gap-[20px] my-8">
-                            <img src={downloadApple} className="cursor-pointer" />
-                            <img src={downloadGoogle} className="cursor-pointer" />
+                        <div className="px-6">
+                            <div className="text-4xl font-extrabold">Download DW <br /> Coffee Apps</div>
+                            <div className="flex flex-col justify-center items-center gap-[20px] my-8">
+                                <img src={downloadApple} className="cursor-pointer" />
+                                <img src={downloadGoogle} className="cursor-pointer" />
+                            </div>
+                            <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and <br /> ultimate coffee convenience.</div>
                         </div>
-                        <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and <br /> ultimate coffee convenience.</div>
-                    </section>
+                    </section >
                     <Footer></Footer>
-                </div>
-            </ReactLenis>
+                </div >
+            </ReactLenis >
         </>)
 }
 
