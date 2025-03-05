@@ -8,13 +8,42 @@ import homeVideo from '@/assets/home-vid.mp4'
 import downloadApple from '@/assets/dl_apple.png'
 import downloadGoogle from '@/assets/dl_google.png'
 
+import drink_1 from '@/assets/drinks/drink_1.jpg'
+import drink_2 from '@/assets/drinks/drink_2.jpg'
+import drink_3 from '@/assets/drinks/drink_3.jpg'
+import drink_4 from '@/assets/drinks/drink_4.jpg'
+import drink_5 from '@/assets/drinks/drink_5.jpg'
+
 import Footer from '@/components/ui/footer/footer';
 import Header from '@/components/ui/header/header';
 import MarqueePromoLine from "@/components/ui/marquee/Marquee";
 import MarqueePromoBanner from "@/components/ui/marquee/MarqueePromoBanner";
 import MarqueeBeverages from "@/components/ui/marquee/MarqueeBeverages";
 
+const renderDrinks = () => {
+    return (
+        <>
+            <div className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
+                <img src={drink_1} className="rounded-md object-center object-cover h-full w-100" />
+            </div>
+            <div className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
+                <img src={drink_2} className="rounded-md object-center object-cover h-full w-100" />
+            </div>
+            <div className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
+                <img src={drink_3} className="rounded-md object-center object-cover h-full w-100" />
+            </div>
+            <div className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
+                <img src={drink_4} className="rounded-md object-center object-cover h-full w-100" />
+            </div>
+            <div className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
+                <img src={drink_5} className="rounded-md object-center object-cover h-full w-100" />
+            </div>
+        </>
+    )
+}
+
 const HomeRoute = () => {
+
     gsap.registerPlugin(useGSAP);
     gsap.registerPlugin(ScrollTrigger);
 
@@ -60,16 +89,6 @@ const HomeRoute = () => {
     }
 
     const drinksNum: number = 8;
-    const renderDrinks = () => {
-        let content = []
-        for (let i = 0; i < drinksNum; i++) {
-            const el = <div key={`drink_${i}`} className="drink mx-4 h-[50vh] xl:h-[70vh] w-96">
-                <img src={`./src/assets/drinks/drink_${i + 1}.jpg`} className="rounded-md object-center object-cover h-full w-100" />
-            </div>
-            content.push(el)
-        }
-        return content;
-    }
 
     return (
         <>
@@ -109,15 +128,15 @@ const HomeRoute = () => {
                             {renderDrinks()}
                         </div>
                     </section>
-                    <section className='h-svh uppercase p-6 text-center'>
+                    <section className='h-svh uppercase p-4 text-center'>
                         <div className="py-16">
-                            <div className="text-4xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
+                            <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
                             <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
                         </div>
                     </section>
                     <section className='uppercase py-16'>
                         <div className="p-6 mb-6 text-center">
-                            <div className="text-[40px] font-bold mb-4">our promo only membership</div>
+                            <div className="text-4xl font-bold mb-4">our promo only membership</div>
                             <div>Download our app and get benefits promo</div>
                         </div>
                         <MarqueePromoBanner></MarqueePromoBanner>
