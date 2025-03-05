@@ -3,7 +3,7 @@ import { footerNavigation, footerCopy, footerCopyright } from '@/constants/homeC
 
 const Footer = () => {
     return <>
-        <section className='p-12'>
+        <section className='p-12 bg-[#f5f5f5] dark:bg-[#0d0d0d]'>
             <div>
                 <div className='flex xl:flex-nowrap xl:flex-row xl:items-end items-start flex-col flex-wrap justify-between gap-[50px]'>
                     <div className='flex flex-col gap-[30px]'>

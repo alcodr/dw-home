@@ -1,8 +1,20 @@
 export const paths = {
-  home: {
-    path: '/',
-    getHref: () => '/',
+
+  index: {
+    home: {
+      path: '/',
+      getHref: () => '/',
+    },
+    contact_us: {
+      path: '/contact-us',
+      getHref: () => '/contact-us',
+    },
   },
+
+  // home: {
+  //   path: '/',
+  //   getHref: () => '/',
+  // },
 
   auth: {
     register: {

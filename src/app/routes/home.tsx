@@ -100,7 +100,7 @@ const HomeRoute = () => {
         <>
             <ReactLenis root options={lenisOptions}>
                 <MarqueePromoLine></MarqueePromoLine>
-                <Header></Header>
+                {/* <Header></Header> */}
                 <div className={`absolute top-0 bottom-0 left-0 right-0`} style={isDark ? shadowStyle : {}}>
                 </div>
 
@@ -165,7 +165,7 @@ const HomeRoute = () => {
                                 <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and <br /> ultimate coffee convenience.</div>
                             </div>
                         </section >
-                        <Footer></Footer>
+                        {/* <Footer></Footer> */}
                     </div >
                 </section>
             </ReactLenis >

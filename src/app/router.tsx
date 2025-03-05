@@ -11,6 +11,10 @@ import {
   ErrorBoundary as AppRootErrorBoundary,
 } from './routes/app/root';
 
+import IndexRoot from './routes/root';
+import { AppProvider } from './provider';
+
+
 const convert = (queryClient: QueryClient) => (m: any) => {
   const { clientLoader, clientAction, default: Component, ...rest } = m;
   return {
@@ -24,8 +28,26 @@ const convert = (queryClient: QueryClient) => (m: any) => {
 export const createAppRouter = (queryClient: QueryClient) =>
   createBrowserRouter([
     {
-      path: paths.home.path,
-      lazy: () => import('./routes/home').then(convert(queryClient)),
+      path: paths.index.home.path,
+      element: (
+        <IndexRoot />
+      ),
+      children: [
+        {
+          path: paths.index.home.path,
+          lazy: () =>
+            import('./routes/home').then(
+              convert(queryClient),
+            ),
+        },
+        {
+          path: paths.index.contact_us.path,
+          lazy: () =>
+            import('./routes/contact-us').then(
+              convert(queryClient),
+            ),
+        }
+      ]
     },
     {
       path: paths.auth.register.path,
@@ -38,9 +60,11 @@ export const createAppRouter = (queryClient: QueryClient) =>
     {
       path: paths.app.root.path,
       element: (
-        <ProtectedRoute>
-          <AppRoot />
-        </ProtectedRoute>
+        <AppProvider>
+          <ProtectedRoute>
+            <AppRoot />
+          </ProtectedRoute>
+        </AppProvider>
       ),
       ErrorBoundary: AppRootErrorBoundary,
       children: [
