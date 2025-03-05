@@ -10,8 +10,8 @@ import downloadGoogle from '@/assets/dl_google.png'
 
 import Footer from '@/components/ui/footer/footer';
 import Header from '@/components/ui/header/header';
-import MarqueeComponent from "@/components/ui/marquee/Marquee";
-import { useEffect } from "react";
+import MarqueePromoLine from "@/components/ui/marquee/Marquee";
+import MarqueePromoBanner from "@/components/ui/marquee/MarqueePromoBanner";
 
 const HomeRoute = () => {
     gsap.registerPlugin(useGSAP);
@@ -38,7 +38,7 @@ const HomeRoute = () => {
     return (
         <>
             <ReactLenis root>
-                <MarqueeComponent></MarqueeComponent>
+                <MarqueePromoLine></MarqueePromoLine>
                 <Header></Header>
                 <div className={`absolute top-0 bottom-0 left-0 right-0`} style={shadowStyle}>
                 </div>
@@ -72,9 +72,12 @@ const HomeRoute = () => {
                         LOYALTY MEMBERSHIP PLATFORM <br />
                         DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.
                     </section>
-                    <section className='h-svh uppercase p-6 text-center'>
-                        our promo only membership <br />
-                        Download our app and get benefits promo
+                    <section className='h-svh uppercase p-6'>
+                        <div className="p-6 mb-6 text-center">
+                            <div className="text-[40px] font-bold mb-4">our promo only membership</div>
+                            <div>Download our app and get benefits promo</div>
+                        </div>
+                        <MarqueePromoBanner></MarqueePromoBanner>
                     </section>
                     <section className='uppercase p-6 text-center'>
                         <div className="text-5xl font-extrabold">Download DW <br /> Coffee Apps</div>

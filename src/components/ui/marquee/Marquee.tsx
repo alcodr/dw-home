@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
 
-const MarqueeComponent = () => {
+const MarqueePromoLine = () => {
     return (
         <div className="fixed bottom-0 z-50">
             <Marquee autoFill className="bg-black text-white">
@@ -12,4 +12,4 @@ const MarqueeComponent = () => {
     )
 }
 
-export default MarqueeComponent
+export default MarqueePromoLine
