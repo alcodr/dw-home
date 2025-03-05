@@ -19,6 +19,7 @@ import Header from '@/components/ui/header/header';
 import MarqueePromoLine from "@/components/ui/marquee/Marquee";
 import MarqueePromoBanner from "@/components/ui/marquee/MarqueePromoBanner";
 import MarqueeBeverages from "@/components/ui/marquee/MarqueeBeverages";
+import { useThemeStore } from "@/components/ui/header/useThemeStore";
 
 const renderDrinks = () => {
     return (
@@ -44,10 +45,14 @@ const renderDrinks = () => {
 
 const HomeRoute = () => {
 
+    const theme = useThemeStore((state: any) => state.theme)
+    const isDark = theme === 'dark' ? true : false
+
     gsap.registerPlugin(useGSAP);
     gsap.registerPlugin(ScrollTrigger);
 
     useGSAP(() => {
+        // Pinning Video
         let panels = gsap.utils.toArray(".panel");
         panels.forEach((panel: any) => {
             ScrollTrigger.create({
@@ -58,6 +63,7 @@ const HomeRoute = () => {
             });
         });
 
+        // Drinks Welcome
         let horizontalSections = gsap.utils.toArray(".drinks-container");
         horizontalSections.forEach((container: any) => {
             let sections = container.querySelectorAll(".drink");
@@ -95,8 +101,9 @@ const HomeRoute = () => {
             <ReactLenis root options={lenisOptions}>
                 <MarqueePromoLine></MarqueePromoLine>
                 <Header></Header>
-                <div className={`absolute top-0 bottom-0 left-0 right-0`} style={shadowStyle}>
+                <div className={`absolute top-0 bottom-0 left-0 right-0`} style={isDark ? shadowStyle : {}}>
                 </div>
+
                 <section className='h-svh bg-emerald-950 relative panel' style={{ 'zIndex': "-100" }}>
                     <video
                         loop
@@ -118,42 +125,44 @@ const HomeRoute = () => {
                         <source src={homeVideo} type="video/mp4" />
                     </video>
                 </section>
-                <div className='bg-[#f5f5f5] dark:bg-[#0d0d0d] overflow-hidden'>
-                    <section className='pt-16 text-center mb-8'>
-                        <div className="px-6 mb-[50px]">
-                            <div className="text-xs mb-4">WELCOME TO</div>
-                            <div className="text-4xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
-                        </div>
-                        <div className="drinks-container flex overflow-hidden w-[500%]">
-                            {renderDrinks()}
-                        </div>
-                    </section>
-                    <section className='h-svh uppercase p-4 text-center'>
-                        <div className="py-16">
-                            <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
-                            <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
-                        </div>
-                    </section>
-                    <section className='uppercase py-16'>
-                        <div className="p-6 mb-6 text-center">
-                            <div className="text-4xl font-bold mb-4">our promo only membership</div>
-                            <div>Download our app and get benefits promo</div>
-                        </div>
-                        <MarqueePromoBanner></MarqueePromoBanner>
-                    </section>
-                    <section className='uppercase py-16 text-center relative' style={beverageShadowStyle}>
-                        <MarqueeBeverages></MarqueeBeverages>
-                        <div className="px-6">
-                            <div className="text-4xl font-extrabold">Download DW <br /> Coffee Apps</div>
-                            <div className="flex flex-col justify-center items-center gap-[20px] my-8">
-                                <img src={downloadApple} className="cursor-pointer" />
-                                <img src={downloadGoogle} className="cursor-pointer" />
+                <section className="container-content">
+                    <div className='bg-[#f5f5f5] dark:bg-[#0d0d0d] overflow-hidden'>
+                        <section className='pt-16 text-center mb-8'>
+                            <div className="px-6 mb-[50px]">
+                                <div className="text-xs mb-4">WELCOME TO</div>
+                                <div className="text-4xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
                             </div>
-                            <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and <br /> ultimate coffee convenience.</div>
-                        </div>
-                    </section >
-                    <Footer></Footer>
-                </div >
+                            <div className="drinks-container flex overflow-hidden w-[500%]">
+                                {renderDrinks()}
+                            </div>
+                        </section>
+                        <section className='h-svh uppercase p-4 text-center'>
+                            <div className="py-16">
+                                <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
+                                <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
+                            </div>
+                        </section>
+                        <section className='uppercase py-16'>
+                            <div className="p-6 mb-6 text-center">
+                                <div className="text-4xl font-bold mb-4">our promo only membership</div>
+                                <div>Download our app and get benefits promo</div>
+                            </div>
+                            <MarqueePromoBanner></MarqueePromoBanner>
+                        </section>
+                        <section className='uppercase py-16 text-center relative' style={beverageShadowStyle}>
+                            <MarqueeBeverages></MarqueeBeverages>
+                            <div className="px-6">
+                                <div className="text-4xl font-extrabold">Download DW <br /> Coffee Apps</div>
+                                <div className="flex flex-col justify-center items-center gap-[20px] my-8">
+                                    <img src={downloadApple} className="cursor-pointer" />
+                                    <img src={downloadGoogle} className="cursor-pointer" />
+                                </div>
+                                <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and <br /> ultimate coffee convenience.</div>
+                            </div>
+                        </section >
+                        <Footer></Footer>
+                    </div >
+                </section>
             </ReactLenis >
         </>)
 }

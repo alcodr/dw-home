@@ -3,6 +3,9 @@ import { MoonIcon, PersonIcon, SunIcon, TextAlignLeftIcon } from "@radix-ui/reac
 import dwLogo from '@/assets/dw-logo.png'
 import { useTheme } from "@/hooks/use-theme"
 import { useThemeStore } from "./useThemeStore"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Header = () => {
 
@@ -11,8 +14,50 @@ const Header = () => {
     const isDark = theme === 'dark' ? true : false
     useTheme()
 
+    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(ScrollTrigger);
+
+    const classes = ["border-b-4", "border-indigo-500"];
+
+    useGSAP(() => {
+        ScrollTrigger.create({
+            markers: true,
+            trigger: '.container-content',
+            start: "top",
+            end: "bottom",
+            toggleClass: {
+                targets: '.header',
+                className: 'border-b'
+            }
+        })
+
+        ScrollTrigger.create({
+            markers: true,
+            trigger: '.container-content',
+            start: "top",
+            end: "bottom",
+            toggleClass: {
+                targets: '.header',
+                className: 'bg-[#f5f5f5]'
+            }
+        })
+
+        ScrollTrigger.create({
+            markers: true,
+            trigger: '.container-content',
+            start: "top",
+            end: "bottom",
+            toggleClass: {
+                targets: '.header',
+                className: 'dark:bg-[#0d0d0d]'
+            }
+        })
+
+
+    })
+
     return (<>
-        <div className="py-6 px-6 flex justify-between bg-transparent hover:bg-[#f5f5f5] dark:hover:bg-[#0d0d0d] text-white items-center fixed w-100 left-0 right-0 z-[200]" >
+        <div className="header py-6 px-6 flex justify-between hover:bg-[#f5f5f5] dark:hover:bg-[#0d0d0d] text-white items-center fixed w-100 left-0 right-0 z-[200]" >
             <div className="cursor-pointer">
                 <TextAlignLeftIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></TextAlignLeftIcon>
             </div>
