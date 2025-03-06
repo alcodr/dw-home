@@ -9,13 +9,11 @@ export const paths = {
       path: '/contact-us',
       getHref: () => '/contact-us',
     },
+    faq: {
+      path: '/faq',
+      getHref: () => '/faq',
+    },
   },
-
-  // home: {
-  //   path: '/',
-  //   getHref: () => '/',
-  // },
-
   auth: {
     register: {
       path: '/auth/register',

@@ -1,5 +1,5 @@
 const ContactUsRoute = () => {
-    return (<section className="h-svh container-content">
+    return (<section className="py-48 px-12 container-content">
         Contact US
     </section>)
 }
