@@ -1,9 +1,19 @@
 import dwLogo from '@/assets/dw-logo.png'
 import { footerNavigation, footerCopy, footerCopyright } from '@/constants/homeConst';
+import { Link, useNavigate } from 'react-router';
+
 
 const Footer = () => {
+
+    const navigate = useNavigate()
+
+    function goto(path: string) {
+        navigate(path)
+    }
+
+
     return <>
-        <section className='p-12 bg-[#f5f5f5] dark:bg-[#0d0d0d]'>
+        <section className='p-12 bg-[#0d0d0d] relative bottom-0 left-0 right-0 text-white'>
             <div>
                 <div className='flex xl:flex-nowrap xl:flex-row xl:items-end items-start flex-col flex-wrap justify-between gap-[50px]'>
                     <div className='flex flex-col gap-[30px]'>
@@ -18,7 +28,9 @@ const Footer = () => {
                             <h6 className='font-semibold'>Page</h6>
                             {footerNavigation.page.map((page, i) => {
                                 return (
-                                    <div key={'footpage_' + i} className='cursor-pointer font-semibold text-zinc-500'>{page}</div>
+                                    <div key={'footpage_' + i} className='cursor-pointer font-semibold text-zinc-500'>
+                                        <Link to={page.path}>{page.name}</Link>
+                                    </div>
                                 )
                             })}
                         </div>
@@ -26,15 +38,20 @@ const Footer = () => {
                             <h6 className='font-semibold'>Company</h6>
                             {footerNavigation.company.map((company, i) => {
                                 return (
-                                    <div key={'footcomp_' + i} className='cursor-pointer font-semibold text-zinc-500'>{company}</div>
+                                    <div key={'footcomp_' + i} className='cursor-pointer font-semibold text-zinc-500'>
+                                        <Link to={company.path}>{company.name}</Link>
+                                    </div>
                                 )
                             })}
                         </div>
+
                         <div className='flex flex-col justify-center flex-none gap-[20px]'>
                             <h6 className='font-semibold'>Legal</h6>
                             {footerNavigation.legal.map((legal, i) => {
                                 return (
-                                    <div key={'footlegal_' + i} className='cursor-pointer font-semibold text-zinc-500'>{legal}</div>
+                                    <div key={'footlegal_' + i} className='cursor-pointer font-semibold text-zinc-500'>
+                                        <Link to={legal.path}>{legal.name}</Link>
+                                    </div>
                                 )
                             })}
                         </div>

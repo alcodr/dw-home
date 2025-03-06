@@ -36,12 +36,12 @@ const MarqueePromoBanner = () => {
             <Marquee autoFill speed={50}>
                 {promos.map((promo: any, i: number) => {
                     return (
-                        <div key={'promo_' + i} className="mx-6 relative w-[500px] h-[500px] bg-neutral-900 flex flex-col justify-end content-end inter rounded-md">
+                        <div key={'promo_' + i} className="mx-6 relative w-[380px] h-[500px] bg-neutral-900 flex flex-col justify-end content-end inter rounded-md">
+                            <div className="absolute top-0 left-0 mt-5 ml-5 py-1 px-4 rounded-full text-white bg-[#1c1c1c] capitalize">{promo.type}</div>
                             <div className="flex flex-col p-5 text-white relative" >
-                                <div className="text-xl leading-[1.2em] mb-1">{promo?.title}</div>
+                                <div className="text-xl leading-[1.2em] mb-1 font-semibold">{promo?.title}</div>
                                 <div>By DW Coffee House • {promo?.date}</div>
                             </div>
-                            <div className="absolute top-0 left-0 mt-5 ml-5 py-1 px-4 rounded-full text-white bg-[#1c1c1c] capitalize">{promo.type}</div>
                         </div>
                     )
                 })}

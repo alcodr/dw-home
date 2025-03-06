@@ -1,12 +1,20 @@
+import { useLocation } from "react-router"
 import Footer from "../ui/footer/footer"
-import Header from "../ui/header/header"
+import { Header, HeaderStatic } from "../ui/header/header"
 
 import * as React from "react"
 
-export function IndexLayout({ children }: { children: React.ReactNode }) {
+export const IndexLayout = ({ children }: { children: React.ReactNode }) => {
+    const [isHome, setIsHome] = React.useState(true)
+    const location = useLocation()
+    React.useEffect(() => {
+        setIsHome(window.location.pathname === '/')
+        window.scrollTo(0, 0)
+    }, [location])
     return (
         <>
-            <Header></Header>
+            {isHome ? <Header></Header>
+                : <HeaderStatic></HeaderStatic>}
             {children}
             <Footer></Footer>
         </>
