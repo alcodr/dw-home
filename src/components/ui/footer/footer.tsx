@@ -1,16 +1,9 @@
 import dwLogo from '@/assets/dw-logo.png'
 import { footerNavigation, footerCopy, footerCopyright } from '@/constants/homeConst';
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 
 
 const Footer = () => {
-
-    const navigate = useNavigate()
-
-    function goto(path: string) {
-        navigate(path)
-    }
-
 
     return <>
         <section className='p-12 bg-[#0d0d0d] relative bottom-0 left-0 right-0 text-white'>
