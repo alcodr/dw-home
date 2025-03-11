@@ -7,30 +7,35 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Drawer, DrawerContent, DrawerHeader, DrawerTrigger } from "../drawer"
-import { Link } from "react-router"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../dropdown"
+import { Link, useNavigate } from "react-router"
 
 const HeaderContent = () => {
     const toggleTheme = useThemeStore((state: any) => state.toggleTheme)
     const theme = useThemeStore((state: any) => state.theme)
     const isDark = theme === 'dark' ? true : false
 
+    const navigate = useNavigate()
+
+    const goto = (path: string) => {
+        navigate(path)
+    }
+
     return (<>
         <div className="cursor-pointer">
-            <Drawer>
+            <Drawer modal={false}>
                 <DrawerTrigger asChild>
                     <TextAlignLeftIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></TextAlignLeftIcon>
                 </DrawerTrigger>
                 <DrawerContent side='left' className="z-[300]">
-                    <DrawerHeader className="border-b border-neutral-300 dark:border-neutral-900 font-semibold py-4 text-[#333333]">
+                    <DrawerHeader className="border-b border-neutral-300 dark:border-neutral-900 font-semibold py-4 text-[#333333] dark:text-white">
                         Menu
                     </DrawerHeader>
                     <section className="py-8 uppercase">
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d]"><Link to='/'>Home</Link></div>
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d]"><Link to='/about'>About</Link></div>
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d]"><Link to='/'>Blog</Link></div>
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d]"><Link to='/faq'>FAQ</Link></div>
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d]"><Link to='/contact-us'>Contact</Link></div>
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>Home</Link></div>
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/about'>About</Link></div>
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>Blog</Link></div>
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/faq'>FAQ</Link></div>
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/contact-us'>Contact</Link></div>
                         <div className="hidden">Download Our Apps</div>
                     </section>
                 </DrawerContent>
@@ -42,15 +47,8 @@ const HeaderContent = () => {
                 {!isDark && <SunIcon color='black' width="24" height="24"></SunIcon>}
                 {isDark && <MoonIcon color='white' width="24" height="24"></MoonIcon>}
             </div>
-            <DropdownMenu>
-                <DropdownMenuTrigger>
-                    <div className="cursor-pointer"><PersonIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></PersonIcon></div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                    <DropdownMenuItem>Item One</DropdownMenuItem>
-                    <DropdownMenuItem>Item Two</DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="cursor-pointer" onClick={() => { goto('/app') }}><PersonIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></PersonIcon></div>
+
         </div>
     </>)
 }
@@ -66,7 +64,7 @@ const Header = () => {
         ScrollTrigger.create({
             trigger: '.container-content',
             start: "top",
-            end: "bottom",
+            end: "bottom+=3000",
             toggleClass: {
                 targets: '.header',
                 className: 'border-b'
@@ -76,7 +74,7 @@ const Header = () => {
         ScrollTrigger.create({
             trigger: '.container-content',
             start: "top",
-            end: "bottom",
+            end: "bottom+=3000",
             toggleClass: {
                 targets: '.header',
                 className: 'bg-[#f5f5f5]'
@@ -86,7 +84,7 @@ const Header = () => {
         ScrollTrigger.create({
             trigger: '.container-content',
             start: "top",
-            end: "bottom",
+            end: "bottom+=3000",
             toggleClass: {
                 targets: '.header',
                 className: 'dark:bg-[#0d0d0d]'
