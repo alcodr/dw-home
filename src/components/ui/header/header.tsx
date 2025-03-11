@@ -8,6 +8,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Drawer, DrawerContent, DrawerHeader, DrawerTrigger } from "../drawer"
 import { Link } from "react-router"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../dropdown"
 
 const HeaderContent = () => {
     const toggleTheme = useThemeStore((state: any) => state.toggleTheme)
@@ -17,7 +18,7 @@ const HeaderContent = () => {
     return (<>
         <div className="cursor-pointer">
             <Drawer>
-                <DrawerTrigger>
+                <DrawerTrigger asChild>
                     <TextAlignLeftIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></TextAlignLeftIcon>
                 </DrawerTrigger>
                 <DrawerContent side='left' className="z-[300]">
@@ -41,7 +42,15 @@ const HeaderContent = () => {
                 {!isDark && <SunIcon color='black' width="24" height="24"></SunIcon>}
                 {isDark && <MoonIcon color='white' width="24" height="24"></MoonIcon>}
             </div>
-            <div className="cursor-pointer"><PersonIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></PersonIcon></div>
+            <DropdownMenu>
+                <DropdownMenuTrigger>
+                    <div className="cursor-pointer"><PersonIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></PersonIcon></div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuItem>Item One</DropdownMenuItem>
+                    <DropdownMenuItem>Item Two</DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
         </div>
     </>)
 }
