@@ -9,6 +9,8 @@ import mock_2 from '@/assets/phone_carousel/mock_2.png'
 import mock_3 from '@/assets/phone_carousel/mock_3.png'
 import mock_4 from '@/assets/phone_carousel/mock_4.png'
 import mock_5 from '@/assets/phone_carousel/mock_5.png'
+import { ChevronLeft } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 const Carousel = () => {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
@@ -66,7 +68,7 @@ const Carousel = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.55 }}
+                transition={{ duration: 0.75 }}
               >
                 <img src={item} style={{ borderRadius: '32px', height: '96%' }} />
               </motion.div>
@@ -75,7 +77,7 @@ const Carousel = () => {
         </AnimatePresence>
       </div>
       <div
-        className="buttons"
+        className="buttons flex justify-between"
         style={{
           position: "absolute",
           "zIndex": 5,
@@ -87,18 +89,18 @@ const Carousel = () => {
         <motion.button
           whileTap={{ scale: 0.8 }}
           onClick={() => handleClick(-1)}
-          style={{ marginRight: "3rem", border: "1px solid black" }}
-          className="text-black dark:text-white dark:bg-transparent"
+          style={{ marginRight: "3rem" }}
+          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center"
         >
-          ◀︎
+          <ChevronLeftIcon width={18} height={18} className="stroke-[#0d0d0d] stroke-1"></ChevronLeftIcon>
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.8 }}
           onClick={() => handleClick(1)}
-          style={{ marginLeft: "3rem", border: "1px solid black" }}
-          className="text-black dark:text-white dark:bg-transparent"
+          style={{ marginLeft: "3rem" }}
+          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center"
         >
-          ▶︎
+          <ChevronRightIcon width={18} height={18} className="stroke-[#0d0d0d] stroke-1"></ChevronRightIcon>
         </motion.button>
       </div>
     </div>
