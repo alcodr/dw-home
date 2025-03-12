@@ -53,6 +53,13 @@ export const createAppRouter = (queryClient: QueryClient) =>
             import('./routes/faq').then(
               convert(queryClient),
             ),
+        },
+        {
+          path: paths.index.about.path,
+          lazy: () =>
+            import('./routes/about').then(
+              convert(queryClient),
+            ),
         }
       ]
     },

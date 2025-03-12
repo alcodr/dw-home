@@ -13,6 +13,10 @@ export const paths = {
       path: '/faq',
       getHref: () => '/faq',
     },
+    about: {
+      path: '/about',
+      getHref: () => '/about',
+    },
   },
   auth: {
     register: {
