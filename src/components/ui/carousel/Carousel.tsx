@@ -9,12 +9,10 @@ import mock_2 from '@/assets/phone_carousel/mock_2.png'
 import mock_3 from '@/assets/phone_carousel/mock_3.png'
 import mock_4 from '@/assets/phone_carousel/mock_4.png'
 import mock_5 from '@/assets/phone_carousel/mock_5.png'
-import { ChevronLeft } from "lucide-react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 const Carousel = () => {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
-  // const items = ["A", "B", "C"];
   const items = [mock_1, mock_2, mock_3, mock_4, mock_5];
 
   // we want the scope to be always to be in the scope of the array so that the carousel is endless
@@ -68,7 +66,7 @@ const Carousel = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.75 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <img src={item} style={{ borderRadius: '32px', height: '96%' }} />
               </motion.div>
@@ -77,7 +75,7 @@ const Carousel = () => {
         </AnimatePresence>
       </div>
       <div
-        className="buttons flex justify-between"
+        className="buttons flex justify-between w-[50vh]"
         style={{
           position: "absolute",
           "zIndex": 5,
