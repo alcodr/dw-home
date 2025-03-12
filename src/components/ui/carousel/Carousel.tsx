@@ -37,7 +37,7 @@ const Carousel = () => {
         className="carousel"
         style={{ position: "relative", "zIndex": "1" }}
       >
-        <img src={mock_phone} width={276} className="absolute" style={{ transform: "translateX(-50%)", left: "50%", zIndex: 4, height: '562px' }} />
+        <img src={mock_phone} width={278} className="absolute" style={{ transform: "translateX(-50%)", left: "50%", zIndex: 5, height: '564px' }} />
         {/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item) => {
@@ -126,10 +126,10 @@ const variants = {
 
 function getZIndex({ position, direction }: any) {
   const indexes: any = {
-    left: direction > 0 ? 2 : 1,
+    left: direction > 0 ? 3 : 2,
     farLeft: direction > 0 ? 2 : 1,
-    center: 3,
-    right: direction > 0 ? 1 : 2,
+    center: 4,
+    right: direction > 0 ? 2 : 3,
     farRight: direction > 0 ? 1 : 2,
   };
   return indexes[position()];
