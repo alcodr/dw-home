@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ReactLenis } from 'lenis/react'
 
 import homeVideo from '@/assets/home-vid.mp4'
 import downloadApple from '@/assets/dl_apple.png'
@@ -18,7 +17,8 @@ import MarqueePromoLine from "@/components/ui/marquee/Marquee";
 import MarqueePromoBanner from "@/components/ui/marquee/MarqueePromoBanner";
 import MarqueeBeverages from "@/components/ui/marquee/MarqueeBeverages";
 import { useThemeStore } from "@/components/ui/header/useThemeStore";
-import { useEffect } from "react";
+import Carousel from "@/components/ui/carousel/Carousel";
+
 
 const renderDrinks = () => {
     return (
@@ -136,11 +136,14 @@ const HomeRoute = () => {
                             <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
                             <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
                         </div>
-                        <div className="flex justify-center">
-                            <div className="text-center text-white flex items-center justify-center bg-neutral-900 w-1/2 h-80">
-                                Carousel
+                        {/* <div className="flex justify-center">
+                            <div>
+                                <img src={mock_phone} width={276} />
                             </div>
-                        </div>
+                        </div> */}
+
+                        <Carousel></Carousel>
+
                     </section>
                     <section className='py-16'>
                         <div className="uppercase p-6 mb-6 text-center">
