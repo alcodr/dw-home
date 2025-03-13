@@ -77,7 +77,7 @@ const Carousel = () => {
         </AnimatePresence>
       </div>
       <div
-        className="buttons flex justify-between w-[50vh]"
+        className="buttons flex justify-between"
         style={{
           position: "absolute",
           "zIndex": 5,
@@ -89,16 +89,16 @@ const Carousel = () => {
         <motion.button
           whileTap={{ scale: 0.8 }}
           onClick={() => handleClick(-1)}
-          style={{ marginRight: "3rem" }}
-          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center"
+          style={{ marginRight: "6rem" }}
+          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center w-[42px] h-[42px]"
         >
           <ChevronLeftIcon width={18} height={18} className="stroke-[#0d0d0d] stroke-1"></ChevronLeftIcon>
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.8 }}
           onClick={() => handleClick(1)}
-          style={{ marginLeft: "3rem" }}
-          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center"
+          style={{ marginLeft: "6rem" }}
+          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center w-[42px] h-[42px]"
         >
           <ChevronRightIcon width={18} height={18} className="stroke-[#0d0d0d] stroke-1"></ChevronRightIcon>
         </motion.button>
