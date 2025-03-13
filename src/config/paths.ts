@@ -17,6 +17,10 @@ export const paths = {
       path: '/about',
       getHref: () => '/about',
     },
+    privacy: {
+      path: '/privacy-policy',
+      getHref: () => '/privacy-policy',
+    },
   },
   auth: {
     register: {

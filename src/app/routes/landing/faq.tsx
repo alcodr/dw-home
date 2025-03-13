@@ -3,7 +3,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 import * as Accordion from '@radix-ui/react-accordion';
 import React, { useRef } from "react";
 import classNames from "classnames";
-import "./faq-style.css"
+import '@/assets/style/faq-style.css'
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";

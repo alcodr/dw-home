@@ -43,21 +43,28 @@ export const createAppRouter = (queryClient: QueryClient) =>
         {
           path: paths.index.contact_us.path,
           lazy: () =>
-            import('./routes/contact-us').then(
+            import('./routes/landing/contact-us').then(
               convert(queryClient),
             ),
         },
         {
           path: paths.index.faq.path,
           lazy: () =>
-            import('./routes/faq').then(
+            import('./routes/landing/faq').then(
               convert(queryClient),
             ),
         },
         {
           path: paths.index.about.path,
           lazy: () =>
-            import('./routes/about').then(
+            import('./routes/landing/about').then(
+              convert(queryClient),
+            ),
+        },
+        {
+          path: paths.index.privacy.path,
+          lazy: () =>
+            import('./routes/landing/privacy').then(
               convert(queryClient),
             ),
         }
