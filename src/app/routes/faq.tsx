@@ -1,9 +1,12 @@
 import faqs from "@/constants/faqConst"
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 import * as Accordion from '@radix-ui/react-accordion';
-import React from "react";
+import React, { useRef } from "react";
 import classNames from "classnames";
 import "./faq-style.css"
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useGSAP } from "@gsap/react";
 
 const faqRoute = () => {
 
@@ -12,16 +15,24 @@ const faqRoute = () => {
     const promoLength = faqs.dw_promo.length + usageLength
     const careLength = faqs.dw_care.length + promoLength
 
+    gsap.registerPlugin(ScrollToPlugin)
+
+    const container = useRef<any>();
+    const { contextSafe } = useGSAP({ scope: container }); // we can pass in a config object as the 1st parameter to make scoping simple
+    const faqScroll = contextSafe((id: string) => {
+        gsap.to(window, { duration: 1, scrollTo: { y: `#${id}`, offsetY: 100, autoKill: true }, ease: "power2.inOut" });
+    });
+
     return (
         <section className="py-48 px-8" >
             <div className="p-8 text-center font-bold text-3xl">FAQ</div>
             <section className="faqs-container flex justify-center gap-[50px]">
                 <div className="hidden lg:block relative">
-                    <div className="lg:sticky top-32 flex flex-col justify-between gap-[20px] text-[12px]">
-                        <div className="faq-sidebar">Aplikasi DW Coffee House</div>
-                        <div className="faq-sidebar">Cara Penggunaan Aplikasi DW Coffeee</div>
-                        <div className="faq-sidebar">Promotion & Point Rewards Membership</div>
-                        <div className="faq-sidebar">Customer Care</div>
+                    <div className="lg:sticky top-32 flex flex-col justify-between gap-[20px] text-[12px] border-l-2 dark:border-white border-[#d0d0d0] pl-4" ref={container}>
+                        <div className="cursor-pointer hover:font-semibold" onClick={() => { faqScroll('DW-APPS') }}>Aplikasi DW Coffee House</div>
+                        <div className="cursor-pointer hover:font-semibold" onClick={() => { faqScroll('DW-USAGE') }}>Cara Penggunaan Aplikasi DW Coffeee</div>
+                        <div className="cursor-pointer hover:font-semibold" onClick={() => { faqScroll('DW-PROMO') }}>Promotion & Point Rewards Membership</div>
+                        <div className="cursor-pointer hover:font-semibold" onClick={() => { faqScroll('DW-CARE') }}>Customer Care</div>
                     </div>
                 </div>
                 <section className="grow-0" id="DW-APPS">
