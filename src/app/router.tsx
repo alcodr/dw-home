@@ -67,6 +67,13 @@ export const createAppRouter = (queryClient: QueryClient) =>
             import('./routes/landing/privacy').then(
               convert(queryClient),
             ),
+        },
+        {
+          path: paths.index.terms.path,
+          lazy: () =>
+            import('./routes/landing/terms').then(
+              convert(queryClient),
+            ),
         }
       ]
     },

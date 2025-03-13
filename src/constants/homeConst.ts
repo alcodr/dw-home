@@ -31,7 +31,7 @@ const footerNavigation = {
         },
         {
             name: 'Terms',
-            path: '/terms-condition'
+            path: '/terms-conditions'
         }
     ]
 }

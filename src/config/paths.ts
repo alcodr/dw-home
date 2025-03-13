@@ -21,6 +21,10 @@ export const paths = {
       path: '/privacy-policy',
       getHref: () => '/privacy-policy',
     },
+    terms: {
+      path: '/terms-conditions',
+      getHref: () => '/terms-conditions',
+    },
   },
   auth: {
     register: {
