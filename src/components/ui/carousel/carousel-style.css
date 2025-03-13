@@ -1,13 +1,29 @@
 .card {
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 15px; */
-  width: 276px;
+  width: 256px;
   height: 561px;
   font-size: 40px;
+  border-radius: 40px;
+  position: relative;
+}
+
+.card > div {
+  border-radius: inherit;
+  inset: 0px;
+  position: absolute;
+  border-radius: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
 }
+
+.card > div > img {
+  width: 98%;
+  height: 96.5%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center center;
+}
+
 button {
   margin: 10px;
   padding: 7px;
@@ -25,4 +41,5 @@ button {
 .carousel {
   display: flex;
   margin: 20px;
+  gap: 10px;
 }

@@ -136,15 +136,8 @@ const HomeRoute = () => {
                             <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
                             <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
                         </div>
-                        {/* <div className="flex justify-center">
-                            <div>
-                                <img src={mock_phone} width={276} />
-                            </div>
-                        </div> */}
-
-                        <Carousel></Carousel>
-
                     </section>
+                    <Carousel></Carousel>
                     <section className='py-16'>
                         <div className="uppercase p-6 mb-6 text-center">
                             <div className="text-4xl font-bold mb-4">our promo only membership</div>

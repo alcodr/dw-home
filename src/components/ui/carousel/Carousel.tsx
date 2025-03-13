@@ -1,15 +1,14 @@
 import "./carousel-style.css"
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 import mock_phone from '@/assets/phone_carousel/mockup_phone.webp'
-
 import mock_1 from '@/assets/phone_carousel/mock_1.png'
 import mock_2 from '@/assets/phone_carousel/mock_2.png'
 import mock_3 from '@/assets/phone_carousel/mock_3.png'
 import mock_4 from '@/assets/phone_carousel/mock_4.png'
 import mock_5 from '@/assets/phone_carousel/mock_5.png'
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 const Carousel = () => {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
@@ -20,7 +19,7 @@ const Carousel = () => {
     ((activeIndex % items.length) + items.length) % items.length;
 
   // so that the carousel is endless, we need to repeat the items twice
-  // then, we slice the the array so that we only have 3 items visible at the same time
+  // then, we slice the the array so that we only have 5 items visible at the same time
   const visibleItems = [...items, ...items].slice(
     indexInArrayScope,
     indexInArrayScope + 5
@@ -35,8 +34,8 @@ const Carousel = () => {
         className="carousel"
         style={{ position: "relative", "zIndex": "1" }}
       >
-        <img src={mock_phone} width={278} className="absolute" style={{ transform: "translateX(-50%)", left: "50%", zIndex: 5, height: '564px' }} />
-        {/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
+        <img src={mock_phone} width={276} className="absolute" style={{ transform: "translateX(-50%)", left: "50%", zIndex: 5, height: '561px' }} />
+        {/*AnimatePresence is necessary to show the items after they are deleted because only max. 5 are shown*/}
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item) => {
             // The layout prop makes the elements change its position as soon as a new one is added
@@ -68,7 +67,9 @@ const Carousel = () => {
                 exit="exit"
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <img src={item} style={{ borderRadius: '32px', height: '96%' }} />
+                <div>
+                  <img src={item} />
+                </div>
               </motion.div>
             );
           })}
@@ -111,7 +112,7 @@ const variants = {
   },
   center: ({ position, direction }: any) => {
     return {
-      scale: position() === "center" ? 1 : 0.7,
+      scale: getScale({ position, direction }),
       x: 0,
       zIndex: getZIndex({ position, direction }),
       opacity: 1,
@@ -132,5 +133,17 @@ function getZIndex({ position, direction }: any) {
   };
   return indexes[position()];
 }
+
+function getScale({ position, direction }: any) {
+  const indexes: any = {
+    left: 0.9,
+    farLeft: 0.85,
+    center: 1,
+    right: 0.9,
+    farRight: 0.85,
+  };
+  return indexes[position()];
+}
+
 
 export default Carousel
