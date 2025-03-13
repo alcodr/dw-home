@@ -125,7 +125,7 @@ const HomeRoute = () => {
                     <section className='pt-16 text-center mb-8'>
                         <div className="px-6 mb-[50px]">
                             <div className="text-xs mb-4">WELCOME TO</div>
-                            <div className="text-4xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
+                            <div className="text-3xl lg:text-5xl font-bold">DAILY WEEKLY COFFEE HOUSE</div>
                         </div>
                         <div className="drinks-container flex overflow-hidden w-[500%]">
                             {renderDrinks()}
@@ -133,14 +133,14 @@ const HomeRoute = () => {
                     </section>
                     <section className='p-4 text-center'>
                         <div className="uppercase py-16">
-                            <div className="text-3xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
+                            <div className="text-3xl lg:text-5xl font-bold mb-4">LOYALTY MEMBERSHIP PLATFORM</div>
                             <div className="text-xs">DW Coffee App is the key to faster orders, better savings, and ultimate coffee convenience.</div>
                         </div>
                     </section>
                     <Carousel></Carousel>
                     <section className='py-16'>
                         <div className="uppercase p-6 mb-6 text-center">
-                            <div className="text-4xl font-bold mb-4">our promo only membership</div>
+                            <div className="text-3xl lg:text-5xl font-bold mb-4">our promo only membership</div>
                             <div>Download our app and get benefits promo</div>
                         </div>
                         <MarqueePromoBanner></MarqueePromoBanner>

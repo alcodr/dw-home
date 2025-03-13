@@ -35,6 +35,7 @@ const Carousel = () => {
         style={{ position: "relative", "zIndex": "1" }}
       >
         <img src={mock_phone} width={276} className="absolute" style={{ transform: "translateX(-50%)", left: "50%", zIndex: 5, height: '561px' }} />
+        <div className="absolute top-0 bottom-0 left-0 right-0 circle-gradient"></div>
         {/*AnimatePresence is necessary to show the items after they are deleted because only max. 5 are shown*/}
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item) => {
@@ -144,6 +145,5 @@ function getScale({ position, direction }: any) {
   };
   return indexes[position()];
 }
-
 
 export default Carousel
