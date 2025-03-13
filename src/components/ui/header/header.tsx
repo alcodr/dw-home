@@ -27,7 +27,7 @@ const HeaderContent = () => {
                     <TextAlignLeftIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></TextAlignLeftIcon>
                 </DrawerTrigger>
                 <DrawerContent side='left' className="z-[300]">
-                    <DrawerHeader className="border-b border-neutral-300 dark:border-neutral-900 font-semibold py-4 text-[#333333] dark:text-white">
+                    <DrawerHeader className="border-b border-neutral-300 dark:border-neutral-900 font-semibold py-4 text-[#333333] dark:text-white text-left">
                         Menu
                     </DrawerHeader>
                     <section className="py-8 uppercase">

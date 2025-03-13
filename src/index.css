@@ -78,15 +78,30 @@
 
 body {
   margin: 0;
-  font-family: 'sora', -apple-system, sans-serif;
+  font-family:
+    'sora',
+    -apple-system,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 .inter {
-  font-family: 'Inter', -apple-system, sans-serif !important;
+  font-family:
+    'Inter',
+    -apple-system,
+    sans-serif !important;
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: number;
 }

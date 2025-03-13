@@ -5,71 +5,101 @@ import React from "react";
 import classNames from "classnames";
 import "./faq-style.css"
 
-// import { Accordion } from "@radix-ui/react-accordion";
-
 const faqRoute = () => {
 
-    // const Accordion = AccordionPrimitive.Root;
-    // const AccordionItem = AccordionPrimitive.AccordionItem;
-    // const AccordionTrigger = AccordionPrimitive.Trigger;
-    // const AccordionContent = AccordionPrimitive.Content;
+    const appsLength = faqs.dw_apps.length
+    const usageLength = faqs.dw_usage.length + appsLength
+    const promoLength = faqs.dw_promo.length + usageLength
+    const careLength = faqs.dw_care.length + promoLength
 
-    return (<section className="py-48 px-8">
-        <div className="p-8 text-center font-bold text-3xl">FAQ</div>
-        <section className="faqs-container flex">
-            <div className="hidden lg:block">
-                h
-            </div>
-            <section>
-                <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6">
-                    Aplikasi DW Coffee House
+    return (
+        <section className="py-48 px-8">
+            <div className="p-8 text-center font-bold text-3xl">FAQ</div>
+            <section className="faqs-container flex justify-center gap-[50px]">
+                <div className="hidden lg:block relative">
+                    <div className="lg:sticky top-24 flex flex-col justify-between gap-[20px] text-[12px]">
+                        <div>Aplikasi DW Coffee House</div>
+                        <div>Cara Penggunaan Aplikasi DW Coffeee</div>
+                        <div>Promotion & Point Rewards Membership</div>
+                        <div>Customer Care</div>
+                    </div>
                 </div>
-                <Accordion.Root
-                    className="AccordionRoot"
-                    type="single"
-                    defaultValue="item-1"
-                    collapsible
-                >
-                    <Accordion.Item className="AccordionItem" value="item-1">
-                        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                        <AccordionContent>
-                            Yes. It adheres to the WAI-ARIA design pattern.
-                        </AccordionContent>
-                    </Accordion.Item>
+                <section className="grow-0">
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6">
+                        Aplikasi DW Coffee House
+                    </div>
+                    <Accordion.Root
+                        className="AccordionRoot"
+                        type="single"
+                        collapsible
+                    >
+                        {faqs.dw_apps.map((dw_apps, i) => {
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i}`}>
+                                <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_apps.title}</AccordionTrigger>
+                                <AccordionContent className="px-4 mt-4">
+                                    <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_apps.body }}></div>
+                                </AccordionContent>
+                            </Accordion.Item>)
+                        })}
+                    </Accordion.Root>
 
-                    <Accordion.Item className="AccordionItem" value="item-2">
-                        <AccordionTrigger>Is it unstyled?</AccordionTrigger>
-                        <AccordionContent>
-                            Yes. It's unstyled by default, giving you freedom over the look and
-                            feel.
-                        </AccordionContent>
-                    </Accordion.Item>
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6">
+                        Cara Penggunaan Aplikasi DW Coffee
+                    </div>
+                    <Accordion.Root
+                        className="AccordionRoot"
+                        type="single"
+                        collapsible
+                    >
+                        {faqs.dw_usage.map((dw_usage, i) => {
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + usageLength}`}>
+                                <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_usage.title}</AccordionTrigger>
+                                <AccordionContent className="px-4 mt-4">
+                                    <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_usage.body }}></div>
+                                </AccordionContent>
+                            </Accordion.Item>)
+                        })}
+                    </Accordion.Root>
 
-                    <Accordion.Item className="AccordionItem" value="item-3">
-                        <AccordionTrigger>Can it be animated?</AccordionTrigger>
-                        <AccordionContent className="AccordionContent">
-                            <div className="AccordionContentText">
-                                Yes! You can animate the Accordion with CSS or JavaScript.
-                            </div>
-                        </AccordionContent>
-                    </Accordion.Item>
-                </Accordion.Root>
-                {faqs.dw_apps.map((dw_apps, i) => {
-                    return (
-                        <div key={`dw_apps${i}`}>
-                            <div className="py-6 px-6 flex justify-between items-center">
-                                <div className="flex-initial">{dw_apps.title}</div>
-                                <div className="flex-none pl-4">
-                                    <ChevronDownIcon></ChevronDownIcon>
-                                </div>
-                            </div>
-                            <div className={`px-6 text-[13px] hidden`} dangerouslySetInnerHTML={{ __html: dw_apps.body }}></div>
-                        </div>
-                    )
-                })}
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6">
+                        Promotion & Point Rewards Membership
+                    </div>
+                    <Accordion.Root
+                        className="AccordionRoot"
+                        type="single"
+                        collapsible
+                    >
+                        {faqs.dw_promo.map((dw_promo, i) => {
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + promoLength}`}>
+                                <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_promo.title}</AccordionTrigger>
+                                <AccordionContent className="px-4 mt-4">
+                                    <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_promo.body }}></div>
+                                </AccordionContent>
+                            </Accordion.Item>)
+                        })}
+                    </Accordion.Root>
+
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6">
+                        Customer Care
+                    </div>
+                    <Accordion.Root
+                        className="AccordionRoot"
+                        type="single"
+                        collapsible
+                    >
+                        {faqs.dw_care.map((dw_care, i) => {
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + careLength}`}>
+                                <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_care.title}</AccordionTrigger>
+                                <AccordionContent className="px-4 mt-4">
+                                    <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_care.body }}></div>
+                                </AccordionContent>
+                            </Accordion.Item>)
+                        })}
+                    </Accordion.Root>
+
+                </section>
             </section>
-        </section>
-    </section>)
+        </section>)
 }
 
 const AccordionTrigger = React.forwardRef(
