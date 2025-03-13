@@ -5,26 +5,24 @@ import React from "react";
 import classNames from "classnames";
 import "./faq-style.css"
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const faqRoute = () => {
-
-    const appsLength = faqs.dw_apps.length
-    const usageLength = faqs.dw_usage.length + appsLength
-    const promoLength = faqs.dw_promo.length + usageLength
-    const careLength = faqs.dw_care.length + promoLength
-
     return (
-        <section className="py-48 px-8">
+        <section className="py-48 px-8" >
             <div className="p-8 text-center font-bold text-3xl">FAQ</div>
             <section className="faqs-container flex justify-center gap-[50px]">
                 <div className="hidden lg:block relative">
-                    <div className="lg:sticky top-24 flex flex-col justify-between gap-[20px] text-[12px]">
-                        <div>Aplikasi DW Coffee House</div>
-                        <div>Cara Penggunaan Aplikasi DW Coffeee</div>
-                        <div>Promotion & Point Rewards Membership</div>
-                        <div>Customer Care</div>
+                    <div className="lg:sticky top-32 flex flex-col justify-between gap-[20px] text-[12px]">
+                        <div className="faq-sidebar">Aplikasi DW Coffee House</div>
+                        <div className="faq-sidebar">Cara Penggunaan Aplikasi DW Coffeee</div>
+                        <div className="faq-sidebar">Promotion & Point Rewards Membership</div>
+                        <div className="faq-sidebar">Customer Care</div>
                     </div>
                 </div>
-                <section className="grow-0">
+                <section className="grow-0" id="DW-APPS">
                     <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6">
                         Aplikasi DW Coffee House
                     </div>
@@ -43,7 +41,7 @@ const faqRoute = () => {
                         })}
                     </Accordion.Root>
 
-                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6">
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6" id="DW-USAGE">
                         Cara Penggunaan Aplikasi DW Coffee
                     </div>
                     <Accordion.Root
@@ -61,7 +59,7 @@ const faqRoute = () => {
                         })}
                     </Accordion.Root>
 
-                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6">
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6" id="DW-PROMO">
                         Promotion & Point Rewards Membership
                     </div>
                     <Accordion.Root
@@ -79,7 +77,7 @@ const faqRoute = () => {
                         })}
                     </Accordion.Root>
 
-                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6">
+                    <div className="faqs-title bg-[#EAEAEA] dark:bg-[#1c1c1c] p-6 mt-6" id="DW-CARE">
                         Customer Care
                     </div>
                     <Accordion.Root

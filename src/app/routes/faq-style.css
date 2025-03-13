@@ -6,7 +6,8 @@ h3 {
 
 .AccordionRoot {
   border-radius: 6px;
-  width: 100%;
+  min-width: 360px;
+  max-width: 460px;
   background-color: var(--mauve-6);
   box-shadow: 0 2px 10px var(--black-a4);
 }
@@ -35,6 +36,7 @@ h3 {
 
 .AccordionHeader {
   display: flex;
+  cursor: pointer;
 }
 
 .AccordionTrigger {
