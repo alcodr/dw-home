@@ -41,7 +41,9 @@ const HeaderContent = () => {
                 </DrawerContent>
             </Drawer>
         </div>
-        <img src={dwLogo} width={150} />
+        <Link to='/'>
+            <img src={dwLogo} width={150} />
+        </Link>
         <div className='flex'>
             <div className='mr-4 cursor-pointer' onClick={() => toggleTheme()}>
                 {!isDark && <SunIcon color='black' width="24" height="24"></SunIcon>}
