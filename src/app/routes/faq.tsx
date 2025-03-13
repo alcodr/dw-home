@@ -34,7 +34,7 @@ const faqRoute = () => {
                         collapsible
                     >
                         {faqs.dw_apps.map((dw_apps, i) => {
-                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i}`}>
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i}`} key={`dw_faq_${i}`}>
                                 <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_apps.title}</AccordionTrigger>
                                 <AccordionContent className="px-4 mt-4">
                                     <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_apps.body }}></div>
@@ -52,7 +52,7 @@ const faqRoute = () => {
                         collapsible
                     >
                         {faqs.dw_usage.map((dw_usage, i) => {
-                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + usageLength}`}>
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + usageLength}`} key={`dw_faq_${i + usageLength}`}>
                                 <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_usage.title}</AccordionTrigger>
                                 <AccordionContent className="px-4 mt-4">
                                     <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_usage.body }}></div>
@@ -70,7 +70,7 @@ const faqRoute = () => {
                         collapsible
                     >
                         {faqs.dw_promo.map((dw_promo, i) => {
-                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + promoLength}`}>
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + promoLength}`} key={`dw_faq_${i + promoLength}`}>
                                 <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_promo.title}</AccordionTrigger>
                                 <AccordionContent className="px-4 mt-4">
                                     <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_promo.body }}></div>
@@ -88,7 +88,7 @@ const faqRoute = () => {
                         collapsible
                     >
                         {faqs.dw_care.map((dw_care, i) => {
-                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + careLength}`}>
+                            return (<Accordion.Item className="AccordionItem" value={`dw_faq_${i + careLength}`} key={`dw_faq_${i + careLength}`}>
                                 <AccordionTrigger className="px-4 pt-4 text-[16px]">{dw_care.title}</AccordionTrigger>
                                 <AccordionContent className="px-4 mt-4">
                                     <div className="text-[13px]" dangerouslySetInnerHTML={{ __html: dw_care.body }}></div>
