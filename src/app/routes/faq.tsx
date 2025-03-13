@@ -5,11 +5,13 @@ import React from "react";
 import classNames from "classnames";
 import "./faq-style.css"
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 const faqRoute = () => {
+
+    const appsLength = faqs.dw_apps.length
+    const usageLength = faqs.dw_usage.length + appsLength
+    const promoLength = faqs.dw_promo.length + usageLength
+    const careLength = faqs.dw_care.length + promoLength
+
     return (
         <section className="py-48 px-8" >
             <div className="p-8 text-center font-bold text-3xl">FAQ</div>
