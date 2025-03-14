@@ -64,5 +64,21 @@ export const paths = {
       path: 'profile',
       getHref: () => '/app/profile',
     },
+    account: {
+      path: 'account',
+      getHref: () => '/app/account',
+    },
+    membership: {
+      path: 'membership',
+      getHref: () => '/app/membership',
+    },
+    transaction: {
+      path: 'transaction',
+      getHref: () => '/app/transaction',
+    },
+    address: {
+      path: 'address',
+      getHref: () => '/app/address',
+    }
   },
 } as const;

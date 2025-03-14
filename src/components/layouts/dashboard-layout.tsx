@@ -83,8 +83,9 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   });
   const { checkAccess } = useAuthorization();
   const navigation = [
-    { name: 'Dashboard', to: paths.app.dashboard.getHref(), icon: Home },
-    { name: 'Discussions', to: paths.app.discussions.getHref(), icon: Folder },
+    { name: 'Membership', to: paths.app.membership.getHref(), icon: Home },
+    { name: 'Transaction History', to: paths.app.transaction.getHref(), icon: Folder },
+    { name: 'Address', to: paths.app.address.getHref(), icon: Folder },
     checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
       name: 'Users',
       to: paths.app.users.getHref(),
