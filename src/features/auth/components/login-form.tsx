@@ -48,7 +48,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
               <Button
                 isLoading={login.isPending}
                 type="submit"
-                className="w-full rounded-full bg-black py-5"
+                className="w-full rounded-full bg-black py-5 text-white"
               >
                 Sign in
               </Button>

@@ -17,6 +17,11 @@ const HeaderContent = () => {
     const navigate = useNavigate()
 
     const goto = (path: string) => {
+        if (path === '/app') {
+            if (isDark) {
+                toggleTheme()
+            }
+        }
         navigate(path)
     }
 
