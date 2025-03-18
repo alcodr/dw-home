@@ -14,7 +14,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, label, error, registration, ...props }, ref) => {
     return (
-      <FieldWrapper label={label} error={error}>
+      <FieldWrapper label={label} error={error} labelSize={12}>
         <input
           type={type}
           className={cn(

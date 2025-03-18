@@ -17,7 +17,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
   const redirectTo = searchParams.get('redirectTo');
 
   return (
-    <div>
+    <div className='inter'>
       <Form
         onSubmit={(values) => {
           login.mutate(values);
@@ -28,38 +28,34 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
           <>
             <Input
               type="email"
-              label="Email Address"
+              label="Email"
               error={formState.errors['email']}
               registration={register('email')}
+              className='rounded-xl'
             />
             <Input
               type="password"
               label="Password"
               error={formState.errors['password']}
               registration={register('password')}
+              className='rounded-xl'
             />
+            <div className='flex justify-between text-[12px] py-4'>
+              <div>Remember Me</div>
+              <div>Forgot Password</div>
+            </div>
             <div>
               <Button
                 isLoading={login.isPending}
                 type="submit"
-                className="w-full"
+                className="w-full rounded-full bg-black py-5"
               >
-                Log in
+                Sign in
               </Button>
             </div>
           </>
         )}
       </Form>
-      <div className="mt-2 flex items-center justify-end">
-        <div className="text-sm">
-          <Link
-            to={paths.auth.register.getHref(redirectTo)}
-            className="font-medium text-blue-600 hover:text-blue-500"
-          >
-            Register
-          </Link>
-        </div>
-      </div>
     </div>
   );
 };

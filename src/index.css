@@ -105,3 +105,34 @@ ul {
 ol {
   list-style: number;
 }
+
+.hr-text {
+  border: 0;
+  font-size: 14px;
+  height: 1.5em;
+  line-height: 1em;
+  position: relative;
+  text-align: center;
+  /* color: black; */
+  margin: 16px 0px;
+}
+
+.hr-text::before {
+  content: '';
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  opacity: 0.2;
+}
+
+.hr-text::after {
+  content: attr(data-content);
+  position: relative;
+  padding: 0 7px;
+  line-height: 1.5em;
+  color: #425583;
+  background-color: #f9fafb;
+}

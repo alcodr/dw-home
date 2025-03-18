@@ -9,6 +9,7 @@ type FieldWrapperProps = {
   className?: string;
   children: React.ReactNode;
   error?: FieldError | undefined;
+  labelSize?: number;
 };
 
 export type FieldWrapperPassThroughProps = Omit<
@@ -17,11 +18,11 @@ export type FieldWrapperPassThroughProps = Omit<
 >;
 
 export const FieldWrapper = (props: FieldWrapperProps) => {
-  const { label, error, children } = props;
+  const { label, error, children, labelSize } = props;
   return (
     <div>
       <Label>
-        {label}
+        <span className={`text-[${labelSize}px]`}>{label}</span>
         <div className="mt-1">{children}</div>
       </Label>
       <Error errorMessage={error?.message} />
