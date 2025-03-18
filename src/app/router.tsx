@@ -138,6 +138,11 @@ export const createAppRouter = (queryClient: QueryClient) =>
           lazy: () =>
             import('./routes/app/transaction').then(convert(queryClient)),
         },
+        {
+          path: paths.app.address.path,
+          lazy: () =>
+            import('./routes/app/address').then(convert(queryClient)),
+        },
       ],
     },
     {

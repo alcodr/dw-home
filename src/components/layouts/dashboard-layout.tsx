@@ -1,4 +1,4 @@
-import { Home, PanelLeft, Folder, Users, User2 } from 'lucide-react';
+import { Home, PanelLeft, Folder, Users, User2, BookUser, FileClock } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink, useNavigate, useNavigation } from 'react-router';
 
@@ -9,6 +9,7 @@ import { paths } from '@/config/paths';
 import { useLogout } from '@/lib/auth';
 import { ROLES, useAuthorization } from '@/lib/authorization';
 import { cn } from '@/utils/cn';
+import dw_logo from '@/assets/dw-logo.png'
 
 import {
   DropdownMenu,
@@ -35,6 +36,14 @@ const Logo = () => {
     </Link>
   );
 };
+
+const DWLogo = () => {
+  return (
+    <Link className="flex items-center text-white" to={paths.index.home.getHref()}>
+      <img className="h-8 w-auto" src={dw_logo} alt="Workflow" />
+    </Link>
+  )
+}
 
 const Progress = () => {
   const { state, location } = useNavigation();
@@ -84,8 +93,8 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { checkAccess } = useAuthorization();
   const navigation = [
     { name: 'Membership', to: paths.app.membership.getHref(), icon: Home },
-    { name: 'Transaction History', to: paths.app.transaction.getHref(), icon: Folder },
-    { name: 'Address', to: paths.app.address.getHref(), icon: Folder },
+    { name: 'Transaction History', to: paths.app.transaction.getHref(), icon: FileClock },
+    { name: 'Address', to: paths.app.address.getHref(), icon: BookUser },
     checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
       name: 'Users',
       to: paths.app.users.getHref(),
@@ -98,7 +107,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-60 flex-col border-r bg-black sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 py-4">
           <div className="flex h-16 shrink-0 items-center px-4">
-            <Logo />
+            <DWLogo />
           </div>
           {navigation.map((item) => (
             <NavLink
