@@ -9,6 +9,7 @@ import { ButtonProps, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 
 import { Link } from '../link';
+import '@/assets/style/table-style.css'
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
   <nav
@@ -26,7 +27,7 @@ const PaginationContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn('flex flex-row items-center gap-1', className)}
+    className={cn('flex flex-row items-center gap-1 table-pagination', className)}
     {...props}
   />
 ));

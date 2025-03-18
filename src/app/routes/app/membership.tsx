@@ -1,13 +1,22 @@
 import { ContentLayout } from '@/components/layouts';
-import { useUser } from '@/lib/auth';
-import { ROLES } from '@/lib/authorization';
+import { Button } from '@/components/ui/button';
+// import { useUser } from '@/lib/auth';
+// import { ROLES } from '@/lib/authorization';
 
 const MembershipRoute = () => {
-  const user = useUser();
+  // const user = useUser();
   return (
-    <ContentLayout title="Dashboard">
-      <h1>Membership page</h1>
-      <h4 className="my-3">
+    <ContentLayout title="Membership">
+      <section className='flex mb-6 md:md-4'>
+        <Button className='px-6 py-6 mr-4'>
+          Top Up
+        </Button>
+        <Button className='px-6 py-6 mr-4'>
+          QR Membership
+        </Button>
+      </section>
+
+      {/* <h4 className="my-3">
         Your role is : <b>{user.data?.role}</b>
       </h4>
       <p className="font-medium">In this application you can:</p>
@@ -25,7 +34,7 @@ const MembershipRoute = () => {
           <li>Comment on discussions</li>
           <li>Delete all comments</li>
         </ul>
-      )}
+      )} */}
     </ContentLayout>
   );
 };

@@ -1,4 +1,4 @@
-import { Home, PanelLeft, Folder, Users, User2, BookUser, FileClock } from 'lucide-react';
+import { Home, PanelLeft, Users, User2, BookUser, FileClock, SquareUserRound, NotebookTabs } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink, useNavigate, useNavigation } from 'react-router';
 
@@ -92,9 +92,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   });
   const { checkAccess } = useAuthorization();
   const navigation = [
+    { name: 'Account', to: paths.app.account.getHref(), icon: SquareUserRound },
     { name: 'Membership', to: paths.app.membership.getHref(), icon: Home },
     { name: 'Transaction History', to: paths.app.transaction.getHref(), icon: FileClock },
-    { name: 'Address', to: paths.app.address.getHref(), icon: BookUser },
+    { name: 'Address', to: paths.app.address.getHref(), icon: NotebookTabs },
     checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
       name: 'Users',
       to: paths.app.users.getHref(),
