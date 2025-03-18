@@ -81,7 +81,7 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
   if (!user.data) {
     return (
-      <Navigate to={paths.auth.login.getHref(location.pathname)} replace />
+      <Navigate to={paths.auth.login.getHref('/')} replace />
     );
   }
 
