@@ -12,8 +12,6 @@ import {
 } from './routes/app/root';
 
 import IndexRoot from './routes/root';
-import { AppProvider } from './provider';
-
 
 const convert = (queryClient: QueryClient) => (m: any) => {
   const { clientLoader, clientAction, default: Component, ...rest } = m;
@@ -88,11 +86,9 @@ export const createAppRouter = (queryClient: QueryClient) =>
     {
       path: paths.app.root.path,
       element: (
-        <AppProvider>
-          <ProtectedRoute>
-            <AppRoot />
-          </ProtectedRoute>
-        </AppProvider>
+        <ProtectedRoute>
+          <AppRoot />
+        </ProtectedRoute>
       ),
       ErrorBoundary: AppRootErrorBoundary,
       children: [
