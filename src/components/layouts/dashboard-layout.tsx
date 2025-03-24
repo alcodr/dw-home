@@ -104,7 +104,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   ].filter(Boolean) as SideNavigationItem[];
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+    <div className="flex min-h-screen w-full flex-col bg-muted/40 inter">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-60 flex-col border-r bg-black sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 py-4">
           <div className="flex h-16 shrink-0 items-center px-4">
