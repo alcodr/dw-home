@@ -96,11 +96,11 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
     { name: 'Membership', to: paths.app.membership.getHref(), icon: Home },
     { name: 'Transaction History', to: paths.app.transaction.getHref(), icon: FileClock },
     { name: 'Address', to: paths.app.address.getHref(), icon: NotebookTabs },
-    checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
-      name: 'Users',
-      to: paths.app.users.getHref(),
-      icon: Users,
-    },
+    // checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
+    //   name: 'Users',
+    //   to: paths.app.users.getHref(),
+    //   icon: Users,
+    // },
   ].filter(Boolean) as SideNavigationItem[];
 
   return (
