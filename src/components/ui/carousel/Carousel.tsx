@@ -90,7 +90,7 @@ const Carousel = () => {
           whileTap={{ scale: 0.8 }}
           onClick={() => handleClick(-1)}
           style={{ marginRight: "6rem" }}
-          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center w-[42px] h-[42px]"
+          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center w-[42px] h-[42px] carousel-button"
         >
           <ChevronLeftIcon width={18} height={18} className="stroke-[#0d0d0d] stroke-1"></ChevronLeftIcon>
         </motion.button>
@@ -98,7 +98,7 @@ const Carousel = () => {
           whileTap={{ scale: 0.8 }}
           onClick={() => handleClick(1)}
           style={{ marginLeft: "6rem" }}
-          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center w-[42px] h-[42px]"
+          className="text-black dark:text-white bg-[#FFF4E0] flex justify-center items-center w-[42px] h-[42px] carousel-button"
         >
           <ChevronRightIcon width={18} height={18} className="stroke-[#0d0d0d] stroke-1"></ChevronRightIcon>
         </motion.button>
