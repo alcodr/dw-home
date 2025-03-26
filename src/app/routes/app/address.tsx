@@ -25,7 +25,7 @@ const AddressRoute = () => {
       <div className='font-[12px] mb-6 text-gray-500'>Manage Your Addresses for a Seamless Delivery Experience</div>
 
       <section className='mb-6 md:md-4'>
-        <Button className='px-6 py-6'>
+        <Button className='px-6 py-1'>
           Add Address
         </Button>
       </section>

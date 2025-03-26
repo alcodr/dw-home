@@ -61,13 +61,13 @@ const TransactionRoute = () => {
   return (
     <ContentLayout title="Transaction History">
       <section className='flex mb-4'>
-        <Button className='px-7 py-2 mr-4 cursor-pointer' onClick={() => { changeTransactionType('active') }}>
+        <Button className='px-7 py-1 mr-4 cursor-pointer' onClick={() => { changeTransactionType('active') }}>
           Order Active
         </Button>
-        <Button className='px-7 py-2 mr-4 cursor-pointer' onClick={() => { changeTransactionType('history') }}>
+        <Button className='px-7 py-1 mr-4 cursor-pointer' onClick={() => { changeTransactionType('history') }}>
           Order History
         </Button>
-        <Button className='px-7 py-2 mr-4 cursor-pointer' onClick={() => { changeTransactionType('topup') }}>
+        <Button className='px-7 py-1 mr-4 cursor-pointer' onClick={() => { changeTransactionType('topup') }}>
           Topup History
         </Button>
       </section>

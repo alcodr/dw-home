@@ -48,10 +48,10 @@ const MembershipRoute = () => {
   return (
     <ContentLayout title="Membership">
       <section className='flex mb-6 md:md-4'>
-        <Button className='px-6 py-6 mr-4'>
+        <Button className='px-6 py-1 mr-4'>
           Top Up
         </Button>
-        <Button className='px-6 py-6 mr-4'>
+        <Button className='px-6 py-1 mr-4'>
           QR Membership
         </Button>
       </section>
