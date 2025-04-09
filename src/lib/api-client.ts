@@ -15,6 +15,7 @@ function authRequestInterceptor(config: InternalAxiosRequestConfig) {
 
 export const api = Axios.create({
   baseURL: env.API_URL,
+  headers: { 'x-api-key': 'x_api_key_73d579efece0e83f73af426b61c39df232629112a5a4d55fedbfae01d2427e05' }
 });
 
 api.interceptors.request.use(authRequestInterceptor);

@@ -7,11 +7,11 @@ import homeVideo from '@/assets/home-vid.mp4'
 import downloadApple from '@/assets/dl_apple.png'
 import downloadGoogle from '@/assets/dl_google.png'
 
-import drink_1 from '@/assets/drinks/drink_1.jpg'
-import drink_2 from '@/assets/drinks/drink_2.jpg'
-import drink_3 from '@/assets/drinks/drink_3.jpg'
-import drink_4 from '@/assets/drinks/drink_4.jpg'
-import drink_5 from '@/assets/drinks/drink_5.jpg'
+import drink_1 from '@/assets/drinks/drink_1.webp'
+import drink_2 from '@/assets/drinks/drink_2.webp'
+import drink_3 from '@/assets/drinks/drink_3.webp'
+import drink_4 from '@/assets/drinks/drink_4.webp'
+import drink_5 from '@/assets/drinks/drink_5.webp'
 
 import MarqueePromoLine from "@/components/ui/marquee/Marquee";
 import MarqueePromoBanner from "@/components/ui/marquee/MarqueePromoBanner";

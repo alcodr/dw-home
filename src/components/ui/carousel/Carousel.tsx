@@ -4,11 +4,11 @@ import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 import mock_phone from '@/assets/phone_carousel/mockup_phone.webp'
-import mock_1 from '@/assets/phone_carousel/mock_1.png'
-import mock_2 from '@/assets/phone_carousel/mock_2.png'
-import mock_3 from '@/assets/phone_carousel/mock_3.png'
-import mock_4 from '@/assets/phone_carousel/mock_4.png'
-import mock_5 from '@/assets/phone_carousel/mock_5.png'
+import mock_1 from '@/assets/phone_carousel/mock_1.avif'
+import mock_2 from '@/assets/phone_carousel/mock_2.avif'
+import mock_3 from '@/assets/phone_carousel/mock_3.avif'
+import mock_4 from '@/assets/phone_carousel/mock_4.avif'
+import mock_5 from '@/assets/phone_carousel/mock_5.avif'
 
 const Carousel = () => {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
