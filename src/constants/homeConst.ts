@@ -14,14 +14,14 @@ const footerNavigation = {
         }
     ],
     company: [
-        // {
-        //     name: 'Contact',
-        //     path: '/contact-us'
-        // },
-        // {
-        //     name: 'FAQ',
-        //     path: '/faq'
-        // }
+        {
+            name: 'Contact',
+            path: '/'
+        },
+        {
+            name: 'FAQ',
+            path: '/faq'
+        }
 
     ],
     legal: [

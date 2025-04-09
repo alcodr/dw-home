@@ -37,9 +37,9 @@ const HeaderContent = () => {
                     </DrawerHeader>
                     <section className="py-8 uppercase">
                         <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>Home</Link></div>
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/about'>About</Link></div>
-                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>Blog</Link></div>
-                        {/* <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/faq'>FAQ</Link></div> */}
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>About</Link></div>
+                        {/* <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>Blog</Link></div> */}
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/faq'>FAQ</Link></div>
                         {/* <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/contact-us'>Contact</Link></div> */}
                         <div className="hidden">Download Our Apps</div>
                     </section>

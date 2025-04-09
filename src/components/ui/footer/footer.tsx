@@ -26,16 +26,16 @@ const Footer = () => {
                                 )
                             })}
                         </div>
-                        {footerNavigation.company.length > 0 && <div className='flex flex-col justify-center flex-none gap-[20px]'>
+                        <div className='flex flex-col justify-center flex-none gap-[20px]'>
                             <h6 className='font-semibold'>Company</h6>
                             {footerNavigation.company.map((company, i) => {
                                 return (
                                     <div key={'footcomp_' + i} className='cursor-pointer font-semibold text-zinc-500'>
-                                        <Link to={company?.path}>{company?.name}</Link>
+                                        <Link to={company.path}>{company.name}</Link>
                                     </div>
                                 )
                             })}
-                        </div>}
+                        </div>
 
                         <div className='flex flex-col justify-center flex-none gap-[20px]'>
                             <h6 className='font-semibold'>Legal</h6>
