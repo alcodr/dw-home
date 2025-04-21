@@ -5,18 +5,14 @@ const footerNavigation = {
             path: '/'
         },
         {
-            name: 'Promotion',
-            path: '/'
+            name: 'About',
+            path: '/about'
         },
-        {
-            name: 'Dukungan',
-            path: '/'
-        }
     ],
     company: [
         {
             name: 'Contact',
-            path: '/'
+            path: '/contact-us'
         },
         {
             name: 'FAQ',

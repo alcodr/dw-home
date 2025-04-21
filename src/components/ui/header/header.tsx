@@ -40,7 +40,7 @@ const HeaderContent = () => {
                         <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>About</Link></div>
                         {/* <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/'>Blog</Link></div> */}
                         <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/faq'>FAQ</Link></div>
-                        {/* <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/contact-us'>Contact</Link></div> */}
+                        <div className="py-6 border-b border-neutral-300 dark:border-neutral-900 text-[#0d0d0d] dark:text-white"><Link to='/contact-us'>Contact</Link></div>
                         <div className="hidden">Download Our Apps</div>
                     </section>
                 </DrawerContent>
@@ -54,7 +54,7 @@ const HeaderContent = () => {
                 {!isDark && <SunIcon color='black' width="24" height="24"></SunIcon>}
                 {isDark && <MoonIcon color='white' width="24" height="24"></MoonIcon>}
             </div>
-            <div className="cursor-pointer" onClick={() => { goto('/app') }}><PersonIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></PersonIcon></div>
+            <div className="cursor-pointer" onClick={() => { }}><PersonIcon color={!isDark ? 'black' : 'white'} width="24" height="24"></PersonIcon></div>
 
         </div>
     </>)
